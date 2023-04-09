@@ -6,4 +6,13 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - run: npm install -g quicktype
-            
+
+            - run: |
+                echo '{ "name": "David" }' | quicktype \
+                  --src-lang schema \
+                  --lang cpp \
+                  --top-level Person \
+                  --out Person.cpp
+                  
+            - run: echo "$(<Person.cpp )"
+
