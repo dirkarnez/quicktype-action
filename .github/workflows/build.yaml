@@ -14,6 +14,8 @@ jobs:
                   --src-lang schema \
                   schema.json \
                   --lang cpp \
+                  --just-types true \
+                  --code-format with-struct \
                   --top-level Person \
                   --out Person.cpp
                   
